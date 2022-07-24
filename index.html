@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Fighting Game</title>
+
+</head>
+
+<body>
+    <br>
+    <div class="menu">
+        <div class=" pInfo">
+            <div id="p1Name" class="pName">Player 1</div>
+            <img id="p1" src="img/p1.gif" />
+            <div class="playerControls">
+                <div class="attackDiv">
+                    <h3>Q:</h3>
+                    <button id="attack" onclick="player1.strike(player1,player2, player1.attackDmg)">Attack</button>
+                </div>
+
+                <div class="HealDiv">
+                    <h3>A:</h3>
+                    <button id="heal" onclick="player1.heal(player1)">Heal</button>
+                </div>
+            </div>
+            <div id="p1Health" class="pHealth">100</div>
+        </div>
+
+        <button id="play">Simulate</button>
+        <div class="pInfo">
+            <div id="p2Name" class="pName">Player 2</div>
+            <img id="p2" class="pImg"  src="img/p2.gif" />
+            <div class="playerControls">
+                <div class="attackDiv">
+                    <h3>P:</h3>
+                    <button id="attack" onclick="player2.strike(player2,player1,player2.attackDmg)">Attack</button>
+                </div>
+                <div class="HealDiv">
+                    <h3>L:</h3>
+                    <button id="heal" onclick="player2.heal(player2)">Heal</button>
+                </div>
+            </div>
+            <div id="p2Health" class="pHealth">100</div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="resultContainer">
+        <div id="result"></div>
+        <button id="reset" onclick="game.reset(p1,p2)">Reset</button>
+    </div>
+
+    <audio id="p1attack" controls>
+        <source src="sound/FastPunch.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="p1heal" controls>
+        <source src="sound/FastHeal.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="p2attack" controls>
+        <source src="sound/QuickHit.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="p2heal" controls>
+        <source src="sound/QuickHeal.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="victory" controls>
+        <source src="sound/Victory.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js" > </script>
+</body>
+
+</html>
